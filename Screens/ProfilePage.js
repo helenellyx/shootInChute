@@ -14,11 +14,19 @@ const ProfileScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Image
-                style={styles.userImg}
-                source={}
-            />
-            <Text style={styles.userName}>User Name</Text>
+            <View style={styles.profileTop}>
+                <Image
+                    style={styles.userImg}
+                    source={}
+                />
+                <Text style={styles.userName}>User Name</Text>
+                <TouchableOpacity style={styles.editButton} onPress={() => {}}>
+                    <Text style={styles.editText}>Edit</Text>
+                </TouchableOpacity>
+            </View>
+            <View>
+
+            </View>
 
 
         </SafeAreaView>
@@ -46,6 +54,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 10,
         marginBottom: 10,
-    }
+    },
+    profileTop:{},
+    editButton:{},
+    editText: {}
 });
 
