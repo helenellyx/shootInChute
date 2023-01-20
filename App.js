@@ -21,7 +21,7 @@ export default function App() {
   );
 }
 
-const HomeScreen= () => {
+const HomeScreen = () => {
   return(
   <View style={styles.container}>
       <Text>home screen</Text>
