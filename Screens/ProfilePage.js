@@ -8,9 +8,30 @@ import {
     ScrollView,
     SafeAreaView,
 } from 'react-native';
+import BarChart from'react-native-chart-kit'
+
+// temporary fake data
+const userStats = {
+    labels: ['Trash 1', 'Trash 2', 'Trash 3'],
+    data: [5, 11, 3],
+};
+
+const chartConfig = {
+    backgroundGradientFrom: '#74CCA8',
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientTo: '#74CCA8',
+    backgroundGradientToOpacity: 0,
+
+    color: (opacity = 1) => `#397A89`,
+    labelColor: (opacity = 1) => `#397A89`,
+    strokeWidth: 2,
+
+    barPercentage: 0.5,
+    useShadowColorFromDataset: false,
+    decimalPlaces: 0,
+};
 
 const ProfileScreen = () => {
-
 
     return (
         <SafeAreaView style={styles.container}>
@@ -25,9 +46,22 @@ const ProfileScreen = () => {
                 </TouchableOpacity>
             </View>
             <View>
-
+                <View style={styles.chartTitle}>
+                    <Text>{"Daily Search"}</Text>
+                </View>
+                <BarChart
+                    style={styles.chart}
+                    data={userStats}
+                    width={390}
+                    height={285}
+                    chartConfig={chartConfig}
+                />
             </View>
-
+            <View>
+                <TouchableOpacity style={styles.logoutButton} onPress={() => {}}>
+                    <Text style={styles.logoutText}>Logout</Text>
+                </TouchableOpacity>
+            </View>
 
         </SafeAreaView>
     );
@@ -45,8 +79,8 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     userImg: {
-        height: 150,
-        width: 150,
+        height: 160,
+        width: 160,
         borderRadius: 75,
     },
     userName: {
@@ -55,8 +89,19 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
     },
-    profileTop:{},
+    profileTop:{
+
+    },
     editButton:{},
-    editText: {}
+    editText: {},
+    chartTitle: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    chart: {
+
+    },
+    logoutButton: {},
+    logoutText: {},
 });
 
