@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { HomeScreen } from './screens/HomeScreen';
+import { CalendarScreen } from './Screens/CalendarScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={HomeScreen}
+          component={CalendarScreen}
         />
         <Stack.Screen name="Search" component={SearchScreen} />
       </Stack.Navigator>
@@ -29,13 +29,12 @@ const HomeScreen= () => {
 );
   }
 
-const SearchScreen= () => {
+const SearchScreen = () => {
   return(
-  <View style={styles.container}>
-      <Text>search screen</Text>
-      <StatusBar style="auto" />
-    </View>
-);
+    <View style={styles.container}>
+        <Text>search screen</Text>
+      </View>
+  );
   }
 
 const styles = StyleSheet.create({
