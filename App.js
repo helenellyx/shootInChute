@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import HomeScreen from './Screens/HomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -12,7 +12,7 @@ import { Octicons } from '@expo/vector-icons'
 function SearchScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
+      <Text>Search!</Text>
     </View>
   );
 }
@@ -34,6 +34,8 @@ function MyTabs() {
   return (
     <Tab.Navigator 
       screenOptions={({route}) => ({
+        headerShown: false,
+        
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -47,19 +49,13 @@ function MyTabs() {
           color = focused ? '#FFE6A2' : '#FCF7E7';
 
           // You can return any component that you like here!
-          return <Octicons name={iconName} size={size} color={color} />
+          return <Octicons name={iconName} size={35} color={color} />
         },
         
         tabBarShowLabel: false,
-        tabBarStyle: {
-          position: 'absolute',
-          width: 353,
-          height: 69,
-          left: 20,
-          top: 740,
-          borderRadius: 28,
-          backgroundColor: '#74CCA8',
-        }
+        tabBarStyle: styles.tabBar,
+        tabBarIconStyle: styles.tabIconStyle,
+        
   })} >
 			<Tab.Screen name="Home" component={HomeScreen} />
 			<Tab.Screen name="Search" component={SearchScreen} />
@@ -73,11 +69,25 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
-    <NavigationContainer>
-      <MyTabs />
+      <NavigationContainer>
+        <MyTabs />
 
-    </NavigationContainer>
-		
+      </NavigationContainer>
 
 	);
 }
+
+const styles = StyleSheet.create({ 
+  tabBar: {
+    position: 'absolute',
+    width: 353,
+    height: 69,
+    left: 20,
+    top: 740,
+    borderRadius: 28,
+    backgroundColor: '#74CCA8',
+  },
+  tabIconStyle: {
+    top: 15,
+  }
+});
