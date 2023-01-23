@@ -16,7 +16,6 @@ const ProfileScreen = () => {
         <SafeAreaView style={styles.container}>
             <Image
                 style={styles.userImg}
-                source={}
             />
             <Text style={styles.userName}>User Name</Text>
 
