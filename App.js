@@ -3,7 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { HomeScreen } from './screens/HomeScreen';
 import ProfileScreen from './Screens/ProfileScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +23,7 @@ export default function App() {
   );
 }
 
-const HomeScreen = () => {
+const HomeScreen= () => {
   return(
   <View style={styles.container}>
       <Text>home screen</Text>
