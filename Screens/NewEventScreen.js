@@ -4,8 +4,9 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { SafeAreaInsetsContext } from "react-native-safe-area-context";
 import { useFonts, DMSans_400Regular, DMSans_700Bold } from '@expo-google-fonts/dm-sans';
 import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
 
-export const NewEventScreen = () => {
+export const NewEventScreen = ({navigation}) => {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState(new Date()); 
   const [datePicked, setDatePicked] = useState(false); 
@@ -61,7 +62,7 @@ export const NewEventScreen = () => {
 
       <View class="button-row" style={{flexDirection: 'row', justifyContent: 'space-evenly', marginTop: "40%"}}> 
       
-      <TouchableOpacity style={{ flex: 4, borderWidth: "1px", borderRadius: 100, marginRight: '30%', backgroundColor: '#FFE6A2'}} onPress={() => console.log("Cancel")}>
+      <TouchableOpacity style={{ flex: 4, borderWidth: "1px", borderRadius: 100, marginRight: '30%', backgroundColor: '#FFE6A2'}} onPress={() => navigation.navigate('Home')}>
         <Text style={{fontSize: 20, fontFamily: "DMSans_400Regular", alignSelf: 'center', color: '#2A4849'}}> Cancel </Text>
       </TouchableOpacity>
 

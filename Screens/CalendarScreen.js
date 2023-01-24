@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { useFonts, DMSans_400Regular, DMSans_700Bold } from '@expo-google-fonts/dm-sans';
 import { LocaleConfig } from 'react-native-calendars';
 import AppLoading from 'expo-app-loading';
 import { AntDesign } from '@expo/vector-icons';
+import {NavigationContainer} from '@react-navigation/native';
+
 
 LocaleConfig.locales['custom'] = {
     monthNames: [
@@ -43,7 +45,7 @@ LocaleConfig.locales['custom'] = {
   }
   
 
-export const CalendarScreen = () => {
+export const CalendarScreen = ({navigation}) => {
     let [fontsLoaded] = useFonts({
         DMSans_400Regular, 
         DMSans_700Bold
@@ -55,9 +57,16 @@ export const CalendarScreen = () => {
     return (
     <View class="label-page" style={{flexDirection:'column', flex: 1, backgroundColor: '#FCF7E7'}}>
 
-    <View class="button-header" style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-      <AntDesign.Button name="close" color="#2A4849" backgroundColor="#FCF7E7" size={30} style={{marginRight: "60%", marginBottom: "3%"}} />
-      <AntDesign.Button name="plus" color="#2A4849" backgroundColor="#FCF7E7" size={30} style={{}} />
+    <View class="button-header" style={{flexDirection: 'row', justifyContent: 'space-evenly', marginTop: '3%'}}>
+    <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{marginRight: "60%", marginBottom: "3%"}}>
+        <AntDesign name="close" size={30}/>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate('New Event')}>
+        <AntDesign name="plus" size={30}/>
+      </TouchableOpacity>
+      {/* <AntDesign.Button name="close" color="#2A4849" backgroundColor="#FCF7E7" size={30} style={{marginRight: "60%", marginBottom: "3%"}} />
+      <AntDesign.Button name="plus" color="#2A4849" backgroundColor="#FCF7E7" size={30} style={{}} onPress={() => navigation.navigate('New Event')} /> */}
       </View>
     <View class="label-table" style={{ flexDirection: 'row', flex: 1}}>
 

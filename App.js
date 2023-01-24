@@ -15,9 +15,10 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={NewEventScreen}
+          component={CalendarScreen}
         />
         <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="New Event" component={NewEventScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
