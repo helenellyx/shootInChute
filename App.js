@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { CalendarScreen } from './Screens/CalendarScreen';
 import { NewEventScreen } from './Screens/NewEventScreen';
+import { LoginScreen } from './Screens/LoginScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -15,10 +16,11 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={CalendarScreen}
+          component={LoginScreen}
         />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="New Event" component={NewEventScreen} />
+        <Stack.Screen name="Login Screen" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
