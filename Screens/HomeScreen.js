@@ -76,20 +76,19 @@ export default function HomeScreen({ navigation }) {
       <Pressable style={styles.calendarLayout}>
         <Calendar
           style={{
-            height: 8,
-            left: 37,
-            width: 185,
+            height: '20%',
+            top: '0%',
+            left: '0%',
+            width: '60%',
             backgroundColor: "#FCF7E7",
-            bottom: 30,
+         
           }}
           // Specify theme properties to override specific styles for calendar parts. Default = {}
           theme={{
-            "stylesheet.calendar.header": {
-              week: {
-                flexDirection: "row",
-                justifyContent: "space-between",
-                color: "black",
-              },
+            "stylesheet.day.basic": {
+              base: {
+                width: 20
+              }
             },
             backgroundColor: "#FCF7E7",
             calendarBackground: "FCF7E7",
@@ -117,6 +116,14 @@ export default function HomeScreen({ navigation }) {
             textDayHeaderFontSize: 12,
           }}
         />
+        <View style={styles.countDown} >
+          <Text style={styles.recyclingDayText} >Recycling Day</Text>
+          <Text>5</Text>
+          <Text>Days</Text>
+
+        </View>
+
+
       </Pressable>
 
       <Pressable style={styles.cameraButton}>
@@ -172,25 +179,36 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   background: {
     backgroundColor: "#FCF7E7",
-    height: 1000,
+    height: "100%",
   },
   calendarLayout: {
     position: "absolute",
-    height: 190,
-    width: 317,
-    left: 37,
-    top: 40,
+    height: '30%',
+    width: '90%',
+    left: '5%',
+    top: '4%',
     borderRadius: 15,
     backgroundColor: "#FCF7E7",
     borderColor: "#2A4849",
     borderWidth: 3,
   },
+  countDown: {
+    left: "60%",
+  },
+  recyclingDayText: {
+    backgroundColor: "red",
+    width: "35%",
+    textAlign: "center",
+    height: "25%",
+
+  },
+
 
   cameraButton: {
-    height: 138,
-    width: 175,
-    left: 37,
-    top: 200,
+    height: '15%',
+    width: '50%',
+    left: '10%',
+    top: '30%',
     borderRadius: 15,
     backgroundColor: "#397A89",
     borderWidth: 3,
@@ -198,10 +216,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   searchButton: {
-    height: 128,
-    width: 191,
-    left: 163,
-    top: 220,
+    height: '15%',
+    width: '50%',
+    left: '40%',
+    top: '24%',
     borderRadius: 15,
     backgroundColor: "#FFE6A2",
     borderWidth: 3,
@@ -210,10 +228,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   mapsButton: {
-    height: 160,
-    width: 317,
-    left: 37,
-    top: 240,
+    height: '18%',
+    width: '80%',
+    left: '10%',
+    top: '26%',
     borderRadius: 15,
     backgroundColor: "#FCF7E7",
     borderWidth: 3,

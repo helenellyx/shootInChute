@@ -2,14 +2,18 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, View} from 'react-native';
 import HomeScreen from './Screens/HomeScreen';
+import ResultsScreen from './Screens/ResultsScreen';
+import ItemScreen from './Screens/ItemScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 import { Octicons } from '@expo/vector-icons'
 
-function SearchScreen() {
+const Stack = createNativeStackNavigator();
+
+function SearchScreen({navigation}) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Search!</Text>
@@ -21,6 +25,7 @@ function ProfileScreen() {
   return(
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Profile!</Text>
+      
     </View>
   )
 }
@@ -58,33 +63,40 @@ function MyTabs() {
         
   })} >
 			<Tab.Screen name="Home" component={HomeScreen} />
-			<Tab.Screen name="Search" component={SearchScreen} />
+			<Tab.Screen name="Search" component={ItemScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
 		</Tab.Navigator>
 
   )
 }
 
-const Stack = createNativeStackNavigator();
+
 
 export default function App() {
 	return (
+    
       <NavigationContainer>
         <MyTabs />
 
       </NavigationContainer>
+      
+
+
+      
 
 	);
 }
 
 const styles = StyleSheet.create({ 
   tabBar: {
+    justifyContent: 'center',
+    alignSelf: 'center',
     position: 'absolute',
-    width: 353,
-    height: 69,
-    left: 20,
-    top: 740,
+    width: '90%',
+    height: '8%',
     borderRadius: 28,
+    left: '5%',
+    top: '88%',
     backgroundColor: '#74CCA8',
   },
   tabIconStyle: {
