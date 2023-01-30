@@ -10,12 +10,10 @@ import HomeScreen from './src/screens/HomeScreen';
 import ResultsScreen from './src/screens/ResultsScreen';
 import ItemScreen from './src/screens/ItemScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
+import SearchScreen from './src/screens/SearchScreen';
+import CameraScreen from './src/screens/CameraScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Octicons } from '@expo/vector-icons'
-
-
-const Stack = createNativeStackNavigator();
-
 
 
 const Tab = createBottomTabNavigator();
@@ -49,15 +47,15 @@ function MyTabs() {
         
   })} >
 			<Tab.Screen name="Home" component={HomeScreen} />
-			<Tab.Screen name="Search" component={ItemScreen} />
+			<Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Calendar" component={CalendarScreen} />
+      <Tab.Screen name="Camera" component={CameraScreen} /> 
 		</Tab.Navigator>
 
   )
 }
 
-
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
@@ -66,10 +64,6 @@ export default function App() {
         <MyTabs />
 
       </NavigationContainer>
-      
-
-
-      
 
 	);
 }
