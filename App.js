@@ -3,12 +3,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, View} from 'react-native';
-import HomeScreen from './Screens/HomeScreen';
-import ResultsScreen from './Screens/ResultsScreen';
-import ItemScreen from './Screens/ItemScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import ResultsScreen from './src/screens/ResultsScreen';
+import ItemScreen from './src/screens/ItemScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
 import { Octicons } from '@expo/vector-icons'
 
 const Stack = createNativeStackNavigator();
