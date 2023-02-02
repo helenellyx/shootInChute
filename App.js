@@ -17,8 +17,18 @@ function SearchScreen({navigation}) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Search!</Text>
     </View>
-  );
+  ); 
+}   
+
+function ProfileScreen() {
+  return(
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile!</Text>
+      
+    </View>
+  )
 }
+
 
 
 const Tab = createBottomTabNavigator();
@@ -48,7 +58,7 @@ function MyTabs() {
         
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
-        tabBarIconStyle: styles.tabIconStyle,
+        tabBarIconStyle: styles.tabIconStyle,     
         
   })} >
 			<Tab.Screen name="Home" component={HomeScreen} />
