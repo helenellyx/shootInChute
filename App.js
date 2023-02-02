@@ -3,9 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { CalendarScreen } from './Screens/CalendarScreen';
-import { NewEventScreen } from './Screens/NewEventScreen';
-import { LoginScreen } from './Screens/LoginScreen'
+import { CalendarScreen } from './screens/CalendarScreen';
+import { NewEventScreen } from './screens/NewEventScreen';
+import { LoginScreen } from './screens/LoginScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={LoginScreen}
+          component={CalendarScreen}
         />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="New Event" component={NewEventScreen} />
