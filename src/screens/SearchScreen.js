@@ -9,7 +9,6 @@ import {
   FlatList,
 } from "react-native";
 import { Searchbar, Card, IconButton } from "react-native-paper";
-import { searchOutlined } from "@ant-design/icons";
 
 //TODO: add fonts
 
@@ -100,7 +99,6 @@ export const SearchScreen = ({ navigation }) => {
         placeholder="Search for items here"
         onChangeText={updateSearch}
         value={search}
-        icon={searchOutlined}
         elevation="0"
         style={styles.searchBar}
         inputStyle={styles.text}
