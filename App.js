@@ -13,6 +13,7 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Octicons } from '@expo/vector-icons'
 
+
 const Stack = createNativeStackNavigator();
 
 
@@ -50,6 +51,7 @@ function MyTabs() {
 			<Tab.Screen name="Home" component={HomeScreen} />
 			<Tab.Screen name="Search" component={ItemScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Calendar" component={CalendarScreen} />
 		</Tab.Navigator>
 
   )

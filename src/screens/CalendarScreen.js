@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import {
   useFonts,
@@ -56,14 +56,14 @@ LocaleConfig.defaultLocale = "custom";
 
 const CircleLabel = (props) => {
   return (
-    <View
+    <SafeAreaView
       style={{
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
-      <View
+      <SafeAreaView
         style={{
           width: 25,
           height: 25,
@@ -73,7 +73,7 @@ const CircleLabel = (props) => {
         }}
       />
       <Text style="auto"> {props.labelText} </Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -87,11 +87,11 @@ export const CalendarScreen = ({ navigation }) => {
     return <AppLoading />;
   }
   return (
-    <View
+    <SafeAreaView
       class="label-page"
       style={{ flexDirection: "column", flex: 1, backgroundColor: "#FCF7E7" }}
     >
-      <View
+      <SafeAreaView
         class="button-header"
         style={{
           flexDirection: "row",
@@ -108,28 +108,28 @@ export const CalendarScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("New Event")}>
           <AntDesign name="plus" size={30} />
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
 
-      <View class="label-table" style={{ flexDirection: "row", flex: 1 }}>
-        <View
+      <SafeAreaView class="label-table" style={{ flexDirection: "row", flex: 1 }}>
+        <SafeAreaView
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <CircleLabel
             circleStyle={{ backgroundColor: "#74CCA8" }}
             labelText="Collection Day"
           />
-        </View>
+        </SafeAreaView>
 
-        <View
+        <SafeAreaView
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <CircleLabel
             circleStyle={{ backgroundColor: "#397A89" }}
             labelText="Custom Event"
           />
-        </View>
-      </View>
-      <View class="scroll-calendar" style={{ flex: 14 }}>
+        </SafeAreaView>
+      </SafeAreaView>
+      <SafeAreaView class="scroll-calendar" style={{ flex: 14 }}>
         <CalendarList
           pastScrollRange={3}
           futureScrollRange={3}
@@ -143,7 +143,7 @@ export const CalendarScreen = ({ navigation }) => {
             textDayFontFamily: "DMSans_400Regular",
           }}
         ></CalendarList>
-      </View>
-    </View>
+      </SafeAreaView>
+    </SafeAreaView>
   );
 };
