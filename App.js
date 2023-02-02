@@ -3,6 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, View} from 'react-native';
+import { CalendarScreen } from './src/screens/CalendarScreen';
+import { NewEventScreen } from './src/screens/NewEventScreen';
+import { LoginScreen } from './src/screens/LoginScreen'
 import HomeScreen from './src/screens/HomeScreen';
 import ResultsScreen from './src/screens/ResultsScreen';
 import ItemScreen from './src/screens/ItemScreen';
@@ -12,13 +15,6 @@ import { Octicons } from '@expo/vector-icons'
 
 const Stack = createNativeStackNavigator();
 
-function SearchScreen({navigation}) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search!</Text>
-    </View>
-  );
-}
 
 
 const Tab = createBottomTabNavigator();
@@ -48,7 +44,7 @@ function MyTabs() {
         
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
-        tabBarIconStyle: styles.tabIconStyle,
+        tabBarIconStyle: styles.tabIconStyle,     
         
   })} >
 			<Tab.Screen name="Home" component={HomeScreen} />
